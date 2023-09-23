@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhubwm308uodg"]
+
+[ext_resource type="Script" path="res://Scenes/cherry.gd" id="1_r381e"]
+[ext_resource type="Texture2D" uid="uid://yuro72ccxdls" path="res://Sprites/Pickups/cherry.png" id="1_wmrsf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gevsv"]
+atlas = ExtResource("1_wmrsf")
+region = Rect2(0, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k77ci"]
+atlas = ExtResource("1_wmrsf")
+region = Rect2(21, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h1d5"]
+atlas = ExtResource("1_wmrsf")
+region = Rect2(42, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53eud"]
+atlas = ExtResource("1_wmrsf")
+region = Rect2(63, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj7xb"]
+atlas = ExtResource("1_wmrsf")
+region = Rect2(84, 0, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8brj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gevsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k77ci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h1d5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53eud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj7xb")
+}],
+"loop": false,
+"name": &"cherry",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_75p2n"]
+radius = 7.07107
+
+[sub_resource type="Animation" id="Animation_2u5e1"]
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["cherry"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xfbvk"]
+_data = {
+"cherry": SubResource("Animation_2u5e1")
+}
+
+[node name="Cherry" type="Area2D"]
+script = ExtResource("1_r381e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8brj4")
+animation = &"cherry"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_75p2n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "cherry"
+libraries = {
+"": SubResource("AnimationLibrary_xfbvk")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

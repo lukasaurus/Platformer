@@ -282,7 +282,7 @@ _data = {
 "run": SubResource("Animation_snd5u")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_k0gde")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -290,7 +290,7 @@ position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_d00wj")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.831512
+frame_progress = 0.0551152
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qwiwg")
