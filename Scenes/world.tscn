@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://l7lvkwknj5sf"]
+
+[ext_resource type="PackedScene" uid="uid://drcljhr237gj2" path="res://Scenes/player.tscn" id="1_so2jy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obvlt"]
+size = Vector2(713, 20)
+
+[node name="World" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(480, 205)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_obvlt")
+
+[node name="Player" parent="." instance=ExtResource("1_so2jy")]
+position = Vector2(488, 163)
+FRICTION = 40.0
