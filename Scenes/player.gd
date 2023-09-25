@@ -12,6 +12,14 @@ var anim_state = state.IDLE
 @onready var animation_player = $AnimationPlayer
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var start_pos = global_position
+
+
+
+func reset():
+	global_position = start_pos
+	set_physics_process(true)
+	anim_state = state.IDLE
 
 func update_state():
 	if is_on_floor():
