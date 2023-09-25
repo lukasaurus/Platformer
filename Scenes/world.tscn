@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://l7lvkwknj5sf"]
+[gd_scene load_steps=19 format=3 uid="uid://l7lvkwknj5sf"]
 
 [ext_resource type="PackedScene" uid="uid://drcljhr237gj2" path="res://Scenes/player.tscn" id="1_so2jy"]
 [ext_resource type="Texture2D" uid="uid://7tohnxlcm3xe" path="res://Sprites/Background/tileset.png" id="2_ixhti"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://wa8i4o2mjsvk" path="res://Scenes/enemy_opossum.tscn" id="14_6tih4"]
 [ext_resource type="PackedScene" uid="uid://unksnup062x" path="res://Scenes/enemy_eagle.tscn" id="14_8ys51"]
 [ext_resource type="Script" path="res://Scenes/Label.gd" id="14_okfy0"]
+[ext_resource type="PackedScene" uid="uid://xv548tptoqbc" path="res://Scenes/Spikes.tscn" id="15_f0a1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0y2wp"]
 texture = ExtResource("2_ixhti")
@@ -1050,44 +1051,50 @@ offset_bottom = 43.0
 text = "SCORE"
 script = ExtResource("14_okfy0")
 
-[node name="Cherry" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(296, 164)
-
-[node name="Cherry2" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(501, 186)
-
-[node name="Cherry3" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(525, 166)
-
-[node name="Cherry4" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(548, 184)
-
-[node name="Cherry5" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(397, 239)
-
-[node name="Cherry6" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(437, 262)
-
-[node name="Cherry7" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(620, 239)
-
-[node name="Cherry8" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(679, 241)
-
-[node name="Cherry9" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(701, 224)
-
-[node name="Cherry10" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(728, 219)
-
-[node name="Cherry11" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(749, 236)
-
-[node name="Cherry12" parent="." instance=ExtResource("13_0u7nu")]
-position = Vector2(759, 260)
-
 [node name="Eagle" parent="." instance=ExtResource("14_8ys51")]
 position = Vector2(348, 129)
 
 [node name="Opossum" parent="." instance=ExtResource("14_6tih4")]
 position = Vector2(952, 164)
+
+[node name="Pickups" type="Node2D" parent="."]
+
+[node name="Cherry" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(296, 164)
+
+[node name="Cherry2" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(501, 186)
+
+[node name="Cherry3" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(525, 166)
+
+[node name="Cherry4" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(548, 184)
+
+[node name="Cherry5" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(397, 239)
+
+[node name="Cherry6" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(437, 262)
+
+[node name="Cherry7" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(620, 239)
+
+[node name="Cherry8" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(679, 241)
+
+[node name="Cherry9" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(701, 224)
+
+[node name="Cherry10" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(728, 219)
+
+[node name="Cherry11" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(749, 236)
+
+[node name="Cherry12" parent="Pickups" instance=ExtResource("13_0u7nu")]
+position = Vector2(759, 260)
+
+[node name="Spikes" parent="." instance=ExtResource("15_f0a1t")]
+position = Vector2(925, 267)
+rotation = -3.14159
