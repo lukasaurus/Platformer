@@ -56,7 +56,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Opossum" type="CharacterBody2D" groups=["Hurt"]]
+[node name="Opossum" type="CharacterBody2D" groups=["Enemy", "Hurt"]]
+collision_layer = 2
 script = ExtResource("1_21353")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -64,6 +65,7 @@ shape = SubResource("CircleShape2D_1jv0t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sd5y3")
+autoplay = "default"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

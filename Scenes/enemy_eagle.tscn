@@ -41,7 +41,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Eagle" type="Area2D" groups=["Hurt"]]
+[node name="Eagle" type="Area2D" groups=["Enemy", "Hurt"]]
 script = ExtResource("1_071ke")
 flip_time = 2
 

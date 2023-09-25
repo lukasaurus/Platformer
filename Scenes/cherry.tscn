@@ -82,6 +82,7 @@ _data = {
 }
 
 [node name="Cherry" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_r381e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

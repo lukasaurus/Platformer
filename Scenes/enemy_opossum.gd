@@ -6,8 +6,14 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var explosion = preload("res://Scenes/explosion.tscn")
 
-
+func die():
+	var new_explosion = explosion.instantiate()
+	get_tree().current_scene.add_child(new_explosion)
+	new_explosion.global_position = global_position
+	queue_free()
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

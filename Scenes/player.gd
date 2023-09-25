@@ -20,8 +20,11 @@ func reset():
 	global_position = start_pos
 	set_physics_process(true)
 	anim_state = state.IDLE
+	animator.position = Vector2(0,-5)
 
 func update_state():
+	if anim_state == state.HURT:
+		return
 	if is_on_floor():
 		if velocity == Vector2.ZERO:
 			anim_state = state.IDLE
@@ -76,3 +79,17 @@ func _physics_process(delta):
 	update_animation(direction)
 	move_and_slide()
 	
+func enemy_checker(body):
+	print(body.name)
+	if body.is_in_group("Enemy") and velocity.y > 0:
+		body.die()
+		velocity.y = JUMP_VELOCITY
+	elif body.is_in_group("Hurt"):
+		anim_state = state.HURT
+
+func _on_hit_box_area_entered(area):
+	enemy_checker(area) # Replace with function body.
+
+
+func _on_hit_box_body_entered(body):
+	enemy_checker(body) # Replace with function body.
