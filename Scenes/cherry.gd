@@ -7,7 +7,7 @@ func collected():
 	var new_vanish_object = vanish.instantiate()
 	get_tree().current_scene.add_child(new_vanish_object)
 	new_vanish_object.global_position = global_position
-	GameManager.score += 1
+	GameManager.increase_score() ###change this
 	
 	
 

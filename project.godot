@@ -20,7 +20,6 @@ GameManager="*res://Scenes/GameManager.gd"
 
 [display]
 
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

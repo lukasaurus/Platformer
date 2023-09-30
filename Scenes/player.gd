@@ -17,10 +17,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func reset():
+	if GameManager.lives == 0:
+		get_node("/root").queue_free()
 	global_position = start_pos
 	set_physics_process(true)
 	anim_state = state.IDLE
 	animator.position = Vector2(0,-5)
+	GameManager.decrease_lives()
+	
 
 func update_state():
 	if anim_state == state.HURT:

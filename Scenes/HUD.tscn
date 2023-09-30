@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://deg44elt7l3g"]
+
+[ext_resource type="Script" path="res://Scenes/HUD.gd" id="1_idjje"]
+[ext_resource type="Theme" uid="uid://duxjjt4g44yw0" path="res://Resources/MyTheme.tres" id="1_vdqnl"]
+[ext_resource type="Texture2D" uid="uid://c4wqtmk1rluv3" path="res://Sprites/UI/Health potion.png" id="2_pyu46"]
+[ext_resource type="Texture2D" uid="uid://c5j3w07mtxlbs" path="res://Sprites/Pickups/cherrysingle.png" id="3_vwen1"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_idjje")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = 24.0
+offset_right = -28.0
+offset_bottom = 64.0
+grow_horizontal = 0
+theme = ExtResource("1_vdqnl")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HeartIcon" type="TextureRect" parent="PanelContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("2_pyu46")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="HeartValue" type="Label" parent="PanelContainer/HBoxContainer2"]
+layout_mode = 2
+text = "x 3"
+
+[node name="Spacer" type="Control" parent="PanelContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="ScoreIcon" type="TextureRect" parent="PanelContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_vwen1")
+stretch_mode = 3
+
+[node name="ScoreValue" type="Label" parent="PanelContainer/HBoxContainer2"]
+layout_mode = 2
+text = "x 3"
