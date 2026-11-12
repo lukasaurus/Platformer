@@ -486,7 +486,7 @@ position = Vector2(119, 209)
 FRICTION = 40.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=562561007]
-position = Vector2(0, -50)
+position = Vector2(0, -30)
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
