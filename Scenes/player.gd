@@ -91,6 +91,7 @@ func enemy_checker(body):
 	elif body.is_in_group("Hurt"):
 		anim_state = state.HURT
 
+
 func _on_hit_box_area_entered(area):
 	enemy_checker(area) # Replace with function body.
 
